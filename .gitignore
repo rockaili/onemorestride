@@ -1,0 +1,13 @@
+.next
+.open-next
+.wrangler
+node_modules
+out
+dist
+.env*
+!.env.example
+.dev.vars
+.DS_Store
+.idea
+npm-debug.log*
+tsconfig.tsbuildinfo
