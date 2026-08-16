@@ -9,9 +9,19 @@ export function HomeHero() {
     <section className="hero" data-reveal="hero">
       <div className="hero-copy" data-reveal="hero-copy">
         <BrandMark size="hero" />
-        <h1>One More Stride</h1>
-        <HorseshoeDivider />
+        <h1 aria-label="One More Stride">
+          <span className="hero-title-word" aria-hidden="true">
+            <span className="hero-title-initial">O</span>ne
+          </span>
+          <span className="hero-title-word" aria-hidden="true">
+            <span className="hero-title-initial">M</span>ore
+          </span>
+          <span className="hero-title-word" aria-hidden="true">
+            <span className="hero-title-initial">S</span>tride
+          </span>
+        </h1>
         <p className="location">Kildare, Ireland</p>
+        <HorseshoeDivider />
         <p className="supporting">Rescue. Rehabilitate. Transform lives.</p>
         <p className="script-line">Every horse deserves one more stride.</p>
         <div className="hero-actions">

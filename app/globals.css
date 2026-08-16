@@ -367,12 +367,25 @@ a {
 
 .hero h1 {
   font-family: "Cormorant Garamond", "Baskerville", "Libre Baskerville", Georgia, serif;
-  font-size: clamp(38px, 3.45vw, 55px);
-  letter-spacing: 0.045em;
+  font-size: clamp(26px, 2.85vw, 43px);
+  letter-spacing: 0.12em;
   line-height: 1;
   margin-top: 0;
   max-width: 100%;
   white-space: nowrap;
+}
+
+.hero-title-word {
+  display: inline-block;
+}
+
+.hero-title-word + .hero-title-word {
+  margin-left: 0.42em;
+}
+
+.hero-title-initial {
+  font-size: 1.36em;
+  line-height: 0;
 }
 
 .horseshoe-divider {
@@ -380,8 +393,8 @@ a {
   display: flex;
   gap: 15px;
   justify-content: center;
-  margin: 16px auto 15px;
-  width: min(345px, 80%);
+  margin: 14px auto 17px;
+  width: min(310px, 74%);
 }
 
 .horseshoe-divider span {
@@ -397,10 +410,10 @@ a {
 .location {
   color: var(--olive);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 7px;
-  margin: 0 0 20px;
+  letter-spacing: 6.5px;
+  margin: 11px 0 0;
   position: relative;
   text-transform: uppercase;
 }
@@ -1280,8 +1293,8 @@ a {
 
 @media (max-width: 560px) {
   .hero h1 {
-    font-size: clamp(30px, 7.8vw, 35px);
-    letter-spacing: 0.035em;
+    font-size: clamp(23px, 6.3vw, 30px);
+    letter-spacing: 0.08em;
     line-height: 1.02;
     margin-left: auto;
     margin-right: auto;
@@ -1290,8 +1303,8 @@ a {
   }
 
   .location {
-    font-size: 12px;
-    letter-spacing: 4.5px;
+    font-size: 11px;
+    letter-spacing: 3.8px;
   }
 
   .location::before,
