@@ -17,8 +17,8 @@ export function BrandMark({ size = "compact" }: BrandMarkProps) {
       <Image
         src={isHero ? siteAssets.logo.hero : siteAssets.logo.compact}
         alt="One More Stride horse and woman emblem"
-        width={isHero ? 254 : 102}
-        height={isHero ? 254 : 102}
+        width={isHero ? 300 : 90}
+        height={isHero ? 200 : 60}
         priority={isHero}
       />
     </div>

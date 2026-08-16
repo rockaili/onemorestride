@@ -64,8 +64,8 @@ export function Header() {
         <Image
           src={siteAssets.logo.compact}
           alt="One More Stride emblem"
-          width={86}
-          height={86}
+          width={90}
+          height={60}
           priority
         />
       </Link>
