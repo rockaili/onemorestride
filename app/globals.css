@@ -336,7 +336,7 @@ a {
   flex-direction: column;
   justify-content: center;
   min-height: 586px;
-  padding: 18px 62px 58px;
+  padding: 20px 62px 52px;
   position: relative;
   text-align: center;
   overflow: hidden;
@@ -345,12 +345,12 @@ a {
 
 .brand-mark--hero {
   line-height: 0;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .brand-mark--hero img {
   height: auto;
-  width: clamp(150px, 12vw, 178px);
+  width: clamp(178px, 13.8vw, 214px);
 }
 
 .hero h1,
@@ -366,7 +366,10 @@ a {
 }
 
 .hero h1 {
-  font-size: clamp(44px, 4.15vw, 66px);
+  font-family: "Cormorant Garamond", "Baskerville", "Libre Baskerville", Georgia, serif;
+  font-size: clamp(38px, 3.45vw, 55px);
+  letter-spacing: 0.045em;
+  line-height: 1;
   margin-top: 0;
   max-width: 100%;
   white-space: nowrap;
@@ -377,8 +380,8 @@ a {
   display: flex;
   gap: 15px;
   justify-content: center;
-  margin: 18px auto 16px;
-  width: min(375px, 86%);
+  margin: 16px auto 15px;
+  width: min(345px, 80%);
 }
 
 .horseshoe-divider span {
@@ -394,10 +397,10 @@ a {
 .location {
   color: var(--olive);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 8px;
-  margin: 0 0 24px;
+  letter-spacing: 7px;
+  margin: 0 0 20px;
   position: relative;
   text-transform: uppercase;
 }
@@ -423,16 +426,16 @@ a {
 
 .supporting {
   color: #07192a;
-  font-size: 26px;
+  font-size: 23px;
   line-height: 1.15;
-  margin: 0 0 8px;
+  margin: 0 0 7px;
 }
 
 .script-line,
 .footer-strip p {
   color: var(--gold);
   font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1.05;
   margin: 0;
 }
@@ -1167,7 +1170,7 @@ a {
   }
 
   .brand-mark--hero img {
-    width: 136px;
+    width: 168px;
   }
 
   .hero-image {
@@ -1277,8 +1280,9 @@ a {
 
 @media (max-width: 560px) {
   .hero h1 {
-    font-size: clamp(32px, 8.3vw, 36px);
-    line-height: 0.98;
+    font-size: clamp(30px, 7.8vw, 35px);
+    letter-spacing: 0.035em;
+    line-height: 1.02;
     margin-left: auto;
     margin-right: auto;
     max-width: 300px;
@@ -1286,8 +1290,8 @@ a {
   }
 
   .location {
-    font-size: 13px;
-    letter-spacing: 5px;
+    font-size: 12px;
+    letter-spacing: 4.5px;
   }
 
   .location::before,
@@ -1296,13 +1300,13 @@ a {
   }
 
   .supporting {
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.22;
     max-width: 260px;
   }
 
   .script-line {
-    font-size: 23px;
+    font-size: 22px;
     max-width: 260px;
   }
 
