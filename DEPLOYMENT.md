@@ -32,7 +32,37 @@ npx opennextjs-cloudflare build
 
 This should create `.open-next/worker.js` and `.open-next/assets`. Those outputs are generated and should not be committed.
 
-No runtime environment variables or secrets are required for the current site. Add environment values later through Cloudflare/Wrangler only when a real integration needs them.
+Stripe donations use Stripe-hosted Checkout Sessions created by the server. Use sandbox keys and Price IDs locally, and production values only in production Cloudflare secrets/environment values:
+
+```bash
+STRIPE_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+STRIPE_GENERAL_DONATION_PRICE_ID=price_...
+STRIPE_MONTHLY_SUPPORT_PRICE_10=price_...
+STRIPE_MONTHLY_SUPPORT_PRICE_25=price_...
+STRIPE_MONTHLY_SUPPORT_PRICE_50=price_...
+STRIPE_MONTHLY_SUPPORT_PRICE_100=price_...
+STRIPE_SPONSORSHIP_CONTIGO_PRICE_15=price_...
+STRIPE_SPONSORSHIP_CONTIGO_PRICE_30=price_...
+STRIPE_SPONSORSHIP_CONTIGO_PRICE_50=price_...
+```
+
+The one-off donation Price must be configured in Stripe as EUR, customer-entered amount, with a €5 minimum. Monthly support and sponsorship values must be EUR monthly recurring Prices matching their configured tiers.
+
+Set `STRIPE_SECRET_KEY` with Cloudflare/Wrangler secrets. Do not commit real key values.
+
+Webhook fulfilment is intentionally not implemented yet. Future webhook handling will likely include:
+
+- `checkout.session.completed`
+- `checkout.session.async_payment_succeeded`
+- `checkout.session.async_payment_failed`
+- `customer.subscription.created`
+- `customer.subscription.updated`
+- `customer.subscription.deleted`
+- `invoice.paid`
+- `invoice.payment_failed`
+
+Do not treat `/support/success` as authoritative payment confirmation.
 
 ## Cloudflare Workers Deployment
 

@@ -160,9 +160,11 @@ export function BrandLineIcon({
       ) : null}
       {variant === "sponsor" ? (
         <>
-          <rect {...strokeProps} strokeWidth={2} x="16" y="12.5" width="17" height="23" rx="4.2" />
-          <path {...strokeProps} strokeWidth={2} d="M22 18.4h5.8c2.2 0 3.7 1.5 3.7 3.4s-1.5 3.5-3.7 3.5h-4.3v5.1" />
-          <path {...strokeProps} strokeWidth={2} d="M23.5 17.5v13M14.2 18.2c-1.2 1.3-1.8 3.1-1.8 5.2s.6 3.8 1.8 5.2M35.8 18.2c1.2 1.3 1.8 3.1 1.8 5.2s-.6 3.8-1.8 5.2" />
+          <path {...strokeProps} strokeWidth={2.2} d="M15.2 12.5v9.1c0 9.3 3.7 14.9 8.8 14.9s8.8-5.6 8.8-14.9v-9.1" />
+          <path {...strokeProps} strokeWidth={1.7} d="M18.5 14.6v7.1c0 6.8 2.4 10.9 5.5 10.9s5.5-4.1 5.5-10.9v-7.1" />
+          <path {...strokeProps} strokeWidth={1.8} d="M24 24.9c1.8-3.1 6.1-2.2 6.1 1.4 0 3-3.5 5-6.1 7-2.6-2-6.1-4-6.1-7 0-3.6 4.3-4.5 6.1-1.4Z" />
+          <circle cx="16.8" cy="17.2" r="1" fill="currentColor" />
+          <circle cx="31.2" cy="17.2" r="1" fill="currentColor" />
         </>
       ) : null}
       {variant === "volunteer" ? (

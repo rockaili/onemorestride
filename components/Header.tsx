@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { siteAssets } from "@/data/assets";
 import { Button } from "./Buttons";
+import { CheckoutButton } from "./CheckoutButton";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -94,9 +95,9 @@ export function Header() {
             </Link>
           );
         })}
-        <Button href="/support" accent>
+        <CheckoutButton request={{ flow: "general_donation" }} showAccentIcon>
           Donate
-        </Button>
+        </CheckoutButton>
       </nav>
     </header>
   );

@@ -4,11 +4,11 @@ import { MotionProvider } from "./MotionProvider";
 
 export function PageShell({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <div className="page-shell">
       <MotionProvider />
       <Header />
-      {children}
+      <div className="page-shell__content">{children}</div>
       <Footer />
-    </>
+    </div>
   );
 }

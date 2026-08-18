@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { siteAssets } from "@/data/assets";
-import { Button } from "./Buttons";
+import { CheckoutButton } from "./CheckoutButton";
 import { BrandLineIcon } from "./BrandLineIcons";
 
 const items = [
@@ -26,9 +26,9 @@ export function DonationSection() {
           Your support helps provide vital veterinary care, feed, shelter and a
           safe haven for horses in need.
         </p>
-        <Button href="/support" variant="gold">
+        <CheckoutButton request={{ flow: "general_donation" }} variant="gold">
           Donate Today
-        </Button>
+        </CheckoutButton>
       </div>
       <div className="donation-actions">
         {items.map((item) => {
