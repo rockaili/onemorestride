@@ -44,10 +44,6 @@ export const monthlySupportConfig: PriceConfig<MonthlySupportTier>[] = [
   }
 ];
 
-export function getBaseUrl() {
-  return (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, "");
-}
-
 export function findMonthlySupportTier(tier: MonthlySupportTier) {
   return monthlySupportConfig.find((item) => item.tier === tier);
 }

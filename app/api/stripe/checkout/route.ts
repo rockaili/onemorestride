@@ -5,8 +5,7 @@ import {
   assertMonthlyPrice,
   findMonthlySupportTier,
   findSponsorshipTier,
-  generalDonationPriceId,
-  getBaseUrl
+  generalDonationPriceId
 } from "@/lib/stripe/checkoutConfig";
 import {
   isHorseSponsorshipTier,
@@ -50,6 +49,22 @@ function isCheckoutRequest(value: unknown): value is CheckoutRequest {
   return false;
 }
 
+function getCheckoutReturnUrls(request: Request) {
+  const origin = new URL(request.url).origin;
+  const successUrl = `${origin}/support/success`;
+  const cancelUrl = `${origin}/support`;
+
+  if (process.env.NODE_ENV === "development") {
+    console.info("Stripe checkout return URLs", {
+      origin,
+      successUrl,
+      cancelUrl
+    });
+  }
+
+  return { cancelUrl, successUrl };
+}
+
 export async function POST(request: Request) {
   let body: unknown;
 
@@ -64,9 +79,7 @@ export async function POST(request: Request) {
   }
 
   const stripe = getStripe();
-  const baseUrl = getBaseUrl();
-  const successUrl = `${baseUrl}/support/success?session_id={CHECKOUT_SESSION_ID}`;
-  const cancelUrl = `${baseUrl}/support/cancel`;
+  const { cancelUrl, successUrl } = getCheckoutReturnUrls(request);
 
   try {
     if (body.flow === "general_donation") {
