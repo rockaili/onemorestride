@@ -23,7 +23,9 @@ function getStripe() {
     throw new Error("Stripe is not configured.");
   }
 
-  return new Stripe(secretKey);
+  return new Stripe(secretKey, {
+    httpClient: Stripe.createFetchHttpClient()
+  });
 }
 
 function isCheckoutRequest(value: unknown): value is CheckoutRequest {
