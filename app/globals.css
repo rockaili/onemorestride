@@ -207,6 +207,34 @@ a {
   width: 44px;
 }
 
+.menu-icon {
+  display: grid;
+  gap: 4px;
+  width: 18px;
+}
+
+.menu-icon span {
+  background: currentColor;
+  border-radius: 999px;
+  display: block;
+  height: 2px;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.menu-icon--close span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-icon--close span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon--close span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 .button {
   align-items: center;
   border: 0;
@@ -964,8 +992,7 @@ a {
 }
 
 .horse-card__image img {
-  object-fit: contain;
-  padding: 8px;
+  object-fit: cover;
 }
 
 .horse-card__body {
@@ -1251,8 +1278,7 @@ a {
 
 .detail-photo img {
   border: 1px solid rgba(177, 144, 77, 0.28);
-  object-fit: contain;
-  padding: 5px;
+  object-fit: cover;
 }
 
 .detail-status {

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { visibleSiteSections } from "@/config/site";
 import { siteAssets } from "@/data/assets";
 import { BrandLineIcon } from "./BrandLineIcons";
 
@@ -8,19 +9,22 @@ const pillars = [
     title: "Rescue",
     copy: "Laragh takes in horses in need and gives them the care, time and love they deserve.",
     href: "/rescue",
-    icon: "rescue"
+    icon: "rescue",
+    showLink: visibleSiteSections.rescue
   },
   {
     title: "Rehabilitate",
     copy: "Through expert care and gentle training, Laragh helps horses heal in body and mind.",
     href: "/rescue",
-    icon: "care"
+    icon: "care",
+    showLink: visibleSiteSections.rescue
   },
   {
     title: "Train",
     copy: "Building trust and confidence so every horse can thrive in their next chapter.",
     href: "/training",
-    icon: "train"
+    icon: "train",
+    showLink: visibleSiteSections.training
   }
 ] as const;
 
@@ -50,9 +54,11 @@ export function Pillars() {
               <BrandLineIcon variant={pillar.icon} size={42} />
               <h2>{pillar.title}</h2>
               <p>{pillar.copy}</p>
-              <Link href={pillar.href}>
-                Learn More <span aria-hidden="true">→</span>
-              </Link>
+              {pillar.showLink ? (
+                <Link href={pillar.href}>
+                  Learn More <span aria-hidden="true">→</span>
+                </Link>
+              ) : null}
             </article>
           );
         })}

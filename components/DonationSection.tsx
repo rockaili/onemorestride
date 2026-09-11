@@ -1,6 +1,7 @@
 import Image from "next/image";
+import { goFundMeDonationUrl } from "@/config/site";
 import { siteAssets } from "@/data/assets";
-import { CheckoutButton } from "./CheckoutButton";
+import { Button } from "./Buttons";
 import { BrandLineIcon } from "./BrandLineIcons";
 
 const items = [
@@ -30,9 +31,9 @@ export function DonationSection() {
           100% of contributions go directly toward veterinary care, horse feed
           and facility maintenance at the rescue.
         </p>
-        <CheckoutButton request={{ flow: "general_donation" }} variant="gold">
+        <Button href={goFundMeDonationUrl} variant="gold">
           Donate Today
-        </CheckoutButton>
+        </Button>
       </div>
       <div className="donation-actions">
         {items.map((item) => {
