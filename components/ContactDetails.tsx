@@ -1,12 +1,13 @@
 import Image from "next/image";
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, MessageCircle, PhoneCall } from "lucide-react";
 import { siteAssets } from "@/data/assets";
 import { SectionHeading } from "./SectionHeading";
 
 const contactItems = [
-  { label: "+353 87 123 4567", icon: Phone },
+  { label: "WhatsApp: +353 83 197 2659", href: "https://wa.me/353831972659", icon: MessageCircle },
+  { label: "Calls: +353 89 987 4422", href: "tel:+353899874422", icon: PhoneCall },
   { label: "info@onemorestride.ie", href: "mailto:info@onemorestride.ie", icon: Mail },
-  { label: "Kildare, Ireland", icon: MapPin }
+  { label: "Based in Co. Kildare, Ireland", icon: MapPin }
 ];
 
 function TikTokIcon({ size = 18 }: { size?: number }) {
@@ -35,8 +36,8 @@ export function ContactDetails() {
     <main className="interior-page contact-page">
       <section className="contact-panel" data-reveal="section">
         <div data-reveal="item">
-          <SectionHeading title="Contact Us" eyebrow="Home / Contact" align="left" />
-          <p className="contact-note">We’d love to hear from you.</p>
+          <SectionHeading title="Contact Laragh" eyebrow="Home / Contact" align="left" />
+          <p className="contact-note">Laragh would love to hear from you.</p>
           <ul className="contact-list">
             {contactItems.map((item) => {
               const Icon = item.icon;
@@ -49,7 +50,7 @@ export function ContactDetails() {
               );
             })}
           </ul>
-          <h2>Follow Us</h2>
+          <h2>Follow Along</h2>
           <div className="socials" aria-label="Social profiles">
             <a
               href="https://www.facebook.com/onemorestride"

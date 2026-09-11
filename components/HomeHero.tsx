@@ -27,17 +27,17 @@ export function HomeHero() {
         <p className="script-line">Every horse deserves one more stride.</p>
         <div className="hero-actions">
           <CheckoutButton request={{ flow: "general_donation" }}>
-            Support Our Rescue
+            Support The Rescue
           </CheckoutButton>
           <Button href="/horses" variant="secondary">
-            Meet Our Horses
+            Meet The Horses
           </Button>
         </div>
       </div>
       <div className="hero-image" data-reveal="hero-image">
         <Image
           src={siteAssets.photos.hero}
-          alt="A woman standing close to a white horse in warm light"
+          alt="Laragh standing beside a brown horse"
           fill
           sizes="(max-width: 760px) 100vw, 50vw"
           priority

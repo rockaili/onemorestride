@@ -4,10 +4,10 @@ export const siteAssets = {
     hero: "/images/brand-emblem-updated.png"
   },
   photos: {
-    hero: "/images/hero-horse-woman.png",
-    about: "/images/about-horse.png",
-    donation: "/images/support-horse.png",
-    waysToHelp: "/images/ways-horse-woman.png"
+    hero: "/images/site-hero-laragh-horse-landscape.jpg",
+    about: "/images/site-about-laragh-horse.jpg",
+    donation: "/images/site-support-horse.jpeg",
+    waysToHelp: "/images/site-ways-horse.jpeg"
   },
   botanical: {
     left: "/images/botanical-left.png",

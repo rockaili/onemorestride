@@ -9,12 +9,12 @@ import { SectionHeading } from "./SectionHeading";
 const ways = [
   {
     title: "Donate",
-    copy: "Every donation helps provide essential care and support.",
+    copy: "100% of contributions go directly toward veterinary care, horse feed and facility maintenance at the rescue.",
     icon: "donate",
     action: "donate"
   },
   {
-    title: "Give Monthly",
+    title: "Monthly Feed Contribution",
     copy: "Set up recurring support for steady care all year.",
     icon: "calendar-grid",
     action: "monthly"
@@ -83,7 +83,7 @@ export function WaysToHelp() {
                     {item.action === "volunteer" ? (
                       <div className="way-actions">
                         <Button href={item.href} variant="secondary">
-                          Contact Us
+                          Contact Laragh
                         </Button>
                       </div>
                     ) : null}
@@ -96,7 +96,7 @@ export function WaysToHelp() {
         <div className="ways-photo" data-reveal="item">
           <Image
             src={siteAssets.photos.waysToHelp}
-            alt="A One More Stride volunteer beside a white horse"
+            alt="Bay horse standing close in a field"
             fill
             sizes="(max-width: 760px) 100vw, 34vw"
           />

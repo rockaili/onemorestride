@@ -14,7 +14,7 @@ const navItems = [
   { href: "/about", label: "About" },
   { href: "/rescue", label: "Rescue" },
   { href: "/training", label: "Training" },
-  { href: "/horses", label: "Our Horses" },
+  { href: "/horses", label: "The Horses" },
   { href: "/support", label: "Ways to Help" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" }

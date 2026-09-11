@@ -15,16 +15,20 @@ export function DonationSection() {
       <div className="donation-photo" data-reveal="item">
         <Image
           src={siteAssets.photos.donation}
-          alt="Brown horse in a stable"
+          alt="Coloured horse standing in a stable"
           fill
           sizes="250px"
         />
       </div>
       <div className="donation-copy" data-reveal="item">
-        <h2>Help Us Change Their Story</h2>
+        <h2>Help Laragh Change Their Story</h2>
         <p>
           Your support helps provide vital veterinary care, feed, shelter and a
           safe haven for horses in need.
+        </p>
+        <p>
+          100% of contributions go directly toward veterinary care, horse feed
+          and facility maintenance at the rescue.
         </p>
         <CheckoutButton request={{ flow: "general_donation" }} variant="gold">
           Donate Today

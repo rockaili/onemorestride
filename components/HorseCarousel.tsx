@@ -26,10 +26,10 @@ export function HorseCarousel() {
 
   return (
     <section className="horses-section" data-reveal="section">
-      <SectionHeading title="Our Horses" />
+      <SectionHeading title="The Horses" />
       <div className="horses-intro">
-        <p>Each of our horses has a story.</p>
-        <p>Together, we write their next chapter.</p>
+        <p>Each horse has a story.</p>
+        <p>Laragh helps write their next chapter.</p>
       </div>
       <div className="horse-filters" aria-label="Horse filters">
         {filters.map((filter) => (
@@ -58,7 +58,7 @@ export function HorseCarousel() {
         </button>
       </div>
       <Button href="/horses" variant="olive">
-        Meet All Our Horses
+        Meet The Horses
       </Button>
     </section>
   );

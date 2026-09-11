@@ -13,11 +13,11 @@ export default function SupportSuccessPage() {
             align="left"
           />
           <p>
-            Your support helps us provide care, rehabilitation and a safer future
+            Your support helps Laragh provide care, rehabilitation and a safer future
             for horses in need.
           </p>
           <p>
-            We’ll confirm everything through Stripe before treating the payment as
+            Stripe will confirm everything before the payment is treated as
             complete.
           </p>
           <Button href="/support" variant="gold">

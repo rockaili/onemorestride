@@ -6,13 +6,13 @@ import { BrandLineIcon } from "./BrandLineIcons";
 const pillars = [
   {
     title: "Rescue",
-    copy: "We take in horses in need and give them the care, time and love they deserve.",
+    copy: "Laragh takes in horses in need and gives them the care, time and love they deserve.",
     href: "/rescue",
     icon: "rescue"
   },
   {
     title: "Rehabilitate",
-    copy: "Through expert care and gentle training, we help horses heal in body and mind.",
+    copy: "Through expert care and gentle training, Laragh helps horses heal in body and mind.",
     href: "/rescue",
     icon: "care"
   },
