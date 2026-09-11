@@ -9,6 +9,7 @@ export type Horse = {
   name: string;
   status: HorseStatus;
   image: string;
+  imagePosition?: string;
   shortDescription: string;
   story: string[];
 };

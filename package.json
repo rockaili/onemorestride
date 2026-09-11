@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NEXT_DEV_SERVER_ONLY=1 next dev",
+    "dev:cloudflare": "next dev",
     "build": "next build",
     "typecheck": "tsc --noEmit",
     "preview:cloudflare": "opennextjs-cloudflare build && opennextjs-cloudflare preview",

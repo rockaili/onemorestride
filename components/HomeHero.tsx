@@ -1,8 +1,8 @@
 import Image from "next/image";
+import { goFundMeDonationUrl } from "@/config/site";
 import { siteAssets } from "@/data/assets";
 import { BrandMark } from "./BrandMark";
 import { Button } from "./Buttons";
-import { CheckoutButton } from "./CheckoutButton";
 import { HorseshoeDivider } from "./SectionHeading";
 
 export function HomeHero() {
@@ -26,9 +26,9 @@ export function HomeHero() {
         <p className="supporting">Rescue. Rehabilitate. Transform lives.</p>
         <p className="script-line">Every horse deserves one more stride.</p>
         <div className="hero-actions">
-          <CheckoutButton request={{ flow: "general_donation" }}>
+          <Button href={goFundMeDonationUrl}>
             Support The Rescue
-          </CheckoutButton>
+          </Button>
           <Button href="/horses" variant="secondary">
             Meet The Horses
           </Button>

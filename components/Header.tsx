@@ -2,22 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { goFundMeDonationUrl, visibleSiteSections } from "@/config/site";
 import { siteAssets } from "@/data/assets";
 import { Button } from "./Buttons";
-import { CheckoutButton } from "./CheckoutButton";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/rescue", label: "Rescue" },
-  { href: "/training", label: "Training" },
-  { href: "/horses", label: "The Horses" },
-  { href: "/support", label: "Ways to Help" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" }
+  { href: "/", label: "Home", visible: true },
+  { href: "/about", label: "About", visible: true },
+  { href: "/rescue", label: "Rescue", visible: visibleSiteSections.rescue },
+  { href: "/training", label: "Training", visible: visibleSiteSections.training },
+  { href: "/horses", label: "The Horses", visible: true },
+  { href: "/support", label: "Ways to Help", visible: true },
+  { href: "/blog", label: "Blog", visible: visibleSiteSections.blog },
+  { href: "/contact", label: "Contact", visible: true }
 ];
 
 export function Header() {
@@ -77,10 +76,14 @@ export function Header() {
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
       >
-        {open ? <X size={22} /> : <Menu size={22} />}
+        <span className={open ? "menu-icon menu-icon--close" : "menu-icon"} aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </span>
       </button>
       <nav className={`nav-links ${open ? "is-open" : ""}`} aria-label="Primary">
-        {navItems.map((item) => {
+        {navItems.filter((item) => item.visible).map((item) => {
           const active =
             item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
 
@@ -95,9 +98,9 @@ export function Header() {
             </Link>
           );
         })}
-        <CheckoutButton request={{ flow: "general_donation" }} showAccentIcon>
+        <Button href={goFundMeDonationUrl} showAccentIcon>
           Donate
-        </CheckoutButton>
+        </Button>
       </nav>
     </header>
   );

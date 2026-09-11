@@ -1,7 +1,7 @@
 import Image from "next/image";
+import { goFundMeDonationUrl, visibleSiteSections } from "@/config/site";
 import { siteAssets } from "@/data/assets";
 import { Button } from "./Buttons";
-import { CheckoutButton } from "./CheckoutButton";
 import { MonthlySupportOptions } from "./CheckoutTierOptions";
 import { BrandLineIcon } from "./BrandLineIcons";
 import { SectionHeading } from "./SectionHeading";
@@ -11,27 +11,31 @@ const ways = [
     title: "Donate",
     copy: "100% of contributions go directly toward veterinary care, horse feed and facility maintenance at the rescue.",
     icon: "donate",
-    action: "donate"
+    action: "donate",
+    visible: true
   },
   {
     title: "Monthly Feed Contribution",
     copy: "Set up recurring support for steady care all year.",
     icon: "calendar-grid",
-    action: "monthly"
+    action: "monthly",
+    visible: visibleSiteSections.stripeDonations
   },
   {
     title: "Sponsor a Horse",
     copy: "Choose a horse and be part of their journey.",
     icon: "sponsor",
     action: "sponsor",
-    href: "/horses"
+    href: "/horses",
+    visible: true
   },
   {
     title: "Volunteer",
     copy: "Give your time and help make a real difference.",
     icon: "volunteer",
     action: "volunteer",
-    href: "/contact"
+    href: "/contact",
+    visible: true
   }
 ] as const;
 
@@ -42,7 +46,7 @@ export function WaysToHelp() {
         <div data-reveal="item">
           <SectionHeading title="Ways to Help" eyebrow="Home / Ways to Help" align="left" />
           <div className="ways-list">
-            {ways.map((item) => {
+            {ways.filter((item) => item.visible).map((item) => {
               return (
                 <article className="way-item" key={item.title} data-reveal="item">
                   <span className="way-icon">
@@ -53,12 +57,9 @@ export function WaysToHelp() {
                     <p>{item.copy}</p>
                     {item.action === "donate" ? (
                       <div className="way-actions">
-                        <CheckoutButton
-                          request={{ flow: "general_donation" }}
-                          variant="gold"
-                        >
+                        <Button href={goFundMeDonationUrl} variant="gold">
                           Donate
-                        </CheckoutButton>
+                        </Button>
                       </div>
                     ) : null}
                     {item.action === "monthly" ? (

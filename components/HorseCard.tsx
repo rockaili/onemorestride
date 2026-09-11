@@ -7,7 +7,13 @@ export function HorseCard({ horse }: { horse: Horse }) {
   return (
     <Link className="horse-card" href={`/horses/${horse.slug}`} data-reveal="item">
       <div className="horse-card__image">
-        <Image src={horse.image} alt={`${horse.name} the horse`} fill sizes="180px" />
+        <Image
+          src={horse.image}
+          alt={`${horse.name} the horse`}
+          fill
+          sizes="180px"
+          style={horse.imagePosition ? { objectPosition: horse.imagePosition } : undefined}
+        />
       </div>
       <div className="horse-card__body">
         <div>
