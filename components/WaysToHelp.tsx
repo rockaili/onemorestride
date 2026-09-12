@@ -39,6 +39,10 @@ const ways = [
   }
 ] as const;
 
+function isVisibleWay(item: (typeof ways)[number]): boolean {
+  return item.visible;
+}
+
 export function WaysToHelp() {
   return (
     <main className="interior-page ways-page">
@@ -46,7 +50,7 @@ export function WaysToHelp() {
         <div data-reveal="item">
           <SectionHeading title="Ways to Help" eyebrow="Home / Ways to Help" align="left" />
           <div className="ways-list">
-            {ways.filter((item) => item.visible).map((item) => {
+            {ways.filter(isVisibleWay).map((item) => {
               return (
                 <article className="way-item" key={item.title} data-reveal="item">
                   <span className="way-icon">
