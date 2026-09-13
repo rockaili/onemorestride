@@ -15,6 +15,7 @@ const navItems = [
   { href: "/training", label: "Training", visible: visibleSiteSections.training },
   { href: "/horses", label: "The Horses", visible: true },
   { href: "/support", label: "Ways to Help", visible: true },
+  { href: "/care-costs", label: "Care Costs", visible: true },
   { href: "/blog", label: "Blog", visible: visibleSiteSections.blog },
   { href: "/contact", label: "Contact", visible: true }
 ];
